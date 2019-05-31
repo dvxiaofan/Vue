@@ -9,11 +9,8 @@
 </head>
 <body>
     <div id="app">
-        <ol>
-            <li v-for="todo in todos" :key="todo.id">
-                {{ todo.text }} {{ todo.title }}
-            </li>
-        </ol>
+        <p>{{ message }}</p>
+        <button v-on:click="changeMsg">changeText</button>
     </div>
     <script src="./index.js"></script>
 </body>
