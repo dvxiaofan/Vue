@@ -2,14 +2,28 @@
  * @Author: DevZhang 
  * @Date: 2019-05-31 22:30:07 
  * @Last Modified by: DevZhang
- * @Last Modified time: 2019-05-31 22:37:42
+ * @Last Modified time: 2019-05-31 22:45:06
  */
+
+
 
 let app = new Vue({
     el: '#app',
     data: {
-        seen: false
+        message: '页面加载于: ' + new Date().toLocaleString()
     }
-});
+})
 
-app.message = 'hello xiao ming'
+app.message = 'new message'
+
+
+
+
+
+
+
+
+
+
+
+
