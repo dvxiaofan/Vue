@@ -9,9 +9,11 @@
 </head>
 <body>
     <div id="app">
-        <span v-bind:title="message">
-            鼠标悬停几秒
-        </span>
+        <ol>
+            <li v-for="todo in todos" :key="todo.id">
+                {{ todo.text }} {{ todo.title }}
+            </li>
+        </ol>
     </div>
     <script src="./index.js"></script>
 </body>
