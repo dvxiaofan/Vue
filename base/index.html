@@ -8,12 +8,16 @@
     <script src="https://cdn.staticfile.org/vue/2.6.2/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <p>原字符串: {{ message }}</p>
-        <p> 第一个新字符串: {{ reverseMsg }}</p>
-        <p>第二个新字符串: {{  reMessage() }} (直接调用方法)</p>
-        <p>{{ fullName }}</p>
+    <div id="watch-demo">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question" type="text" />
+        </p>
+        <p>{{ answer }}</p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
