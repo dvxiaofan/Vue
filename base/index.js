@@ -2,39 +2,29 @@
  * @Author: DevZhang 
  * @Date: 2019-05-31 22:30:07 
  * @Last Modified by: DevZhang
- * @Last Modified time: 2019-06-05 09:35:25
+ * @Last Modified time: 2019-06-05 16:29:14
  */
 
 
-Vue.component('todo-item', {
-    template: '\
-        <li>\
-            {{ title }}\
-            <button v-on:click="$emit(\'remove\')">Remove</button>\
-        </li>\
-        ',
-        props: ['title']
+
+Vue.component('my-component', {
+    template: '#my-component'
 })
 
 
 new Vue({
-    el: "#todo-demo",
+    el: "#demo",
     data: {
-        newTodoText: '',
-        todos: [
-            { id: 1, title: 'title1' },
-            { id: 2, title: 'title2' },
-            { id: 3, title: 'title3' },
-        ],
-        nextTodoId: 4
+        showDiv: false
     },
+
     methods: {
-        addNewTodo() {
-            this.todos.push({
-                id: this.nextTodoId++,
-                title: this.newTodoText
+        getText() {
+            this.showDiv = true;
+            this.$nextTick(function() {
+                let text = document.getElementById('div').innerHTML;
+                console.log('text: ', text);
             })
-            this.newTodoText = ''
         }
     }
 })
