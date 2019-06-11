@@ -1,4 +1,4 @@
-# myapp
+# my-elm
 
 ## Project setup
 ```
