@@ -2,7 +2,7 @@
  * @Author: DevZhang 
  * @Date: 2019-06-05 16:37:54 
  * @Last Modified by: DevZhang
- * @Last Modified time: 2019-06-05 17:27:30
+ * @Last Modified time: 2019-06-14 13:26:12
  */
 
 
@@ -11,21 +11,21 @@ function isValueNumber(value) {
 }
 
 Vue.component('input-number', {
-    template: '\
-        <div class="input-number"> \
-            <input \
-                type="text" \
-                @keyup.down="handleDown" \
-                @keyup.up="handleUp" \
-                :value="currentValue" \
-                @change="handleChange"> \
-            <button \
-                @click="handleDown" \
-                :disabled="currentValue <= min">-</button> \
-            <button \
-                @click.down="handleUp" \
-                :disabled="currentValue >= max">+</button> \
-        </div>',
+    template: `
+        <div class="input-number">
+            <input
+                type="text"
+                @keyup.down="handleDown"
+                @keyup.up="handleUp"
+                :value="currentValue"
+                @change="handleChange">
+            <button
+                @click="handleDown"
+                :disabled="currentValue <= min">-</button>
+            <button
+                @click.down="handleUp"
+                :disabled="currentValue >= max">+</button>
+        </div>`,
         props: {
             max: {
                 type: Number,
