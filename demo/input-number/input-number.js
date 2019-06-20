@@ -2,14 +2,15 @@
  * @Author: DevZhang 
  * @Date: 2019-06-05 16:37:54 
  * @Last Modified by: DevZhang
- * @Last Modified time: 2019-06-14 13:26:12
+ * @Last Modified time: 2019-06-14 13:40:26
  */
 
-
+// 判断是否为数字
 function isValueNumber(value) {
     return (/(^-?[0-9]+\.{1}\d+$)|(^-?[1-9][0-9]*$)|(^-?0{1}$)/).test(value + '');
 }
 
+// 数字输入框组件
 Vue.component('input-number', {
     template: `
         <div class="input-number">
@@ -26,6 +27,7 @@ Vue.component('input-number', {
                 @click.down="handleUp"
                 :disabled="currentValue >= max">+</button>
         </div>`,
+        // 组件 props
         props: {
             max: {
                 type: Number,
@@ -45,6 +47,7 @@ Vue.component('input-number', {
                 currentValue: this.value
             }
         },
+        // 观察探测当前值是否变化
         watch: {
             currentValue(val) {
                 this.$emit('input', val);
@@ -55,19 +58,23 @@ Vue.component('input-number', {
             }
         },
         methods: {
+            // 更新当前值
             updateValue(val) {
                 if (val > this.max) val = this.max;
                 if (val < this.min) val = this.min;
                 this.currentValue = val;
             },
+            // 按下减号或者方向键下的事件
             handleDown() {
                 if (this.currentValue <= this.min) return;
                 this.currentValue -= 1;
             },
+            // 按下加号或者方向键上的事件
             handleUp() {
                 if (this.currentValue >= this.max) return;
                 this.currentValue += 1;
             },
+            // 监听input变化事件
             handleChange(event) {
                 let val = event.target.value.trim();
                 let max = this.max;
@@ -88,6 +95,7 @@ Vue.component('input-number', {
             }
         },
         mounted () {
+            // 更新当前值
             this.updateValue(this.value);
         }
 });
