@@ -10,8 +10,9 @@
 <body>
     <div id="app">
         <body-content>
-            <div class="header" slot="header">header</div>
-            <div class="footer" slot="footer">footer</div>
+            <template slot-scope="props">
+                <h3>{{props.item}}</h3>
+            </template>
         </body-content>
     </div>
 
